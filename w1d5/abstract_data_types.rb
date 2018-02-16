@@ -1,8 +1,9 @@
 # DIY ADTs
 
-After you finish the exercises, or if you get stuck on one of the problems, you can view the solutions [here][adt-solutions].
-
-[adt-solutions]: solution.rb
+# After you finish the exercises, or if you get stuck on one of the problems,
+# you can view the solutions [here][adt-solutions].
+#
+# [adt-solutions]: solution.rb
 
 ## Exercise 1 - Stack
 
