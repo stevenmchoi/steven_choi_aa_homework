@@ -45,8 +45,14 @@ class Simon
 
   def require_sequence
     # Don't test console user input!
-    color_input = gets.chomp.split
-    self.game_over = color_input == seq
+
+    seq.each do |color|
+      input = gets.chomp
+      system("clear")
+
+      self.game_over = input != color
+      break if game_over
+    end
   end
 
   def add_random_color
