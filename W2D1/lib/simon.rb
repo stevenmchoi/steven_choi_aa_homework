@@ -1,3 +1,5 @@
+require 'colorize'
+
 class Simon
   COLORS = %w(red blue green yellow)
 
@@ -36,7 +38,7 @@ class Simon
     add_random_color
 
     seq.each do |color|
-      puts color
+      puts color.colorize(color.to_sym)
       sleep(1)
       system("clear")
       sleep(0.25)
