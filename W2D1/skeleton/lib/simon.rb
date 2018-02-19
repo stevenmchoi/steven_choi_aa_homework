@@ -10,7 +10,10 @@ class Simon
   end
 
   def play
-    take_turn until game_over
+    until game_over
+      system("clear")
+      take_turn
+    end
 
     game_over_message
     reset_game
@@ -21,7 +24,10 @@ class Simon
     require_sequence
 
     unless game_over
+      system("clear")
       round_success_message
+      sleep(1)
+
       self.sequence_length += 1
     end
   end
