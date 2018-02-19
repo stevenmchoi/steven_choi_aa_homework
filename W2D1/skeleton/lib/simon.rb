@@ -60,11 +60,13 @@ class Simon
   end
 
   def round_success_message
-    puts "YOU WIN!!!!!!!"
+    puts "GOOD JOB!!!!!!!"
   end
 
   def game_over_message
+    system("clear")
     puts "YOU LOSE!!!!!!!"
+    p seq
   end
 
   def reset_game
@@ -72,4 +74,9 @@ class Simon
     self.game_over = false
     self.seq = []
   end
+end
+
+if $PROGRAM_NAME == __FILE__
+  game = Simon.new
+  game.play
 end
