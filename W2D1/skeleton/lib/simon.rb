@@ -13,7 +13,6 @@ class Simon
     take_turn until game_over
 
     game_over_message
-
     reset_game
   end
 
@@ -33,6 +32,8 @@ class Simon
 
   def require_sequence
     # Don't test console user input!
+    color_input = gets.chomp.split
+    self.game_over = color_input == seq
   end
 
   def add_random_color
@@ -40,11 +41,11 @@ class Simon
   end
 
   def round_success_message
-
+    puts "YOU WIN!!!!!!!"
   end
 
   def game_over_message
-
+    puts "YOU LOSE!!!!!!!"
   end
 
   def reset_game
