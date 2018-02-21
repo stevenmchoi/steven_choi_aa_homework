@@ -5,29 +5,51 @@ require 'dessert'
 Instructions: implement all of the pending specs (the `it` statements
 without blocks)! Be sure to look over the solutions when you're done.
 =end
-describe Dessert do
+RSpec.describe Dessert do
   let(:chef) { double("chef") }
+  let(:quantity) { 10 }
+  let(:quantity2) { "10" }
+  subject(:dessert) { Dessert.new("soup", quantity, chef) }
 
   describe "#initialize" do
     it "sets a type" do
-      expect(Dessert.new("soup", 10, chef).type).to eq("soup")
+      expect(dessert.type).to include("soup")
     end
 
     it "sets a quantity" do
-      expect()
+      expect(dessert.quantity).to be(10)
     end
 
-    it "starts ingredients as an empty array"
+    it "starts ingredients as an empty array" do
+      expect(dessert.ingredients).to be_empty
+    end
 
-    it "raises an argument error when given a non-integer quantity"
+    it "raises an argument error when given a non-integer quantity" do
+      expect { Dessert.new("soup", quantity2, chef) }.to raise_error(ArgumentError)
+    end
   end
 
   describe "#add_ingredient" do
-    it "adds an ingredient to the ingredients array"
+    let(:ingredient) { "spam" }
+
+    it "adds an ingredient to the ingredients array" do
+      dessert.add_ingredient(ingredient)
+      expect(dessert.ingredients).to include(ingredient)
+    end
   end
 
   describe "#mix!" do
-    it "shuffles the ingredient array"
+    let(:ingredients_list) { ["spam", "chicken", "pork", "kitchen sink"] }
+
+    it "shuffles the ingredient array" do
+      ingredients_list.each do |ingredient|
+        dessert.add_ingredient(ingredient)
+      end
+      dessert.mix!
+
+      expect(dessert.ingredients).to_not eq(ingredients_list)
+      expect(dessert.ingredients).to match_array(ingredients_list)
+    end
   end
 
   describe "#eat" do
