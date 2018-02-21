@@ -67,5 +67,14 @@ class Board
   end
 
   def winner
+    p1_cup, p2_cup = @score_cup.values
+    case self.cups[p1_cup] <=> self.cups[p2_cup]
+    when -1
+      @score_cup.keys[1]
+    when 1
+      @score_cup.keys[0]
+    else
+      :draw
+    end
   end
 end
