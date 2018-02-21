@@ -10,11 +10,11 @@ describe Dessert do
 
   describe "#initialize" do
     it "sets a type" do
-      expect(chef.type).to eq(Chef)
+      expect(Dessert.new("soup", 10, chef).type).to eq("soup")
     end
 
     it "sets a quantity" do
-      expect
+      expect()
     end
 
     it "starts ingredients as an empty array"
