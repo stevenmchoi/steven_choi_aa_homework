@@ -61,6 +61,9 @@ class Board
   end
 
   def one_side_empty?
+    @player_row.any? do |_name, range|
+      range.all? { |cup| self.cups[cup].empty? }
+    end
   end
 
   def winner
