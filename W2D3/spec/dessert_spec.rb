@@ -53,9 +53,16 @@ RSpec.describe Dessert do
   end
 
   describe "#eat" do
-    it "subtracts an amount from the quantity"
+    let(:amount1) { 3 }
+    it "subtracts an amount from the quantity" do
+      dessert.eat(amount1)
+      expect(dessert.quantity).to eq(quantity - amount1)
+    end
 
-    it "raises an error if the amount is greater than the quantity"
+    let(:amount2) { quantity + 1 }
+    it "raises an error if the amount is greater than the quantity" do
+      expect { dessert.eat(amount2) }.to raise_error
+    end
   end
 
   describe "#serve" do
