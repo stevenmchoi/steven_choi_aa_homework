@@ -66,7 +66,10 @@ RSpec.describe Dessert do
   end
 
   describe "#serve" do
-    it "contains the titleized version of the chef's name"
+    it "contains the titleized version of the chef's name" do
+      expect(chef).to receive(:titleize)
+      dessert.serve
+    end
   end
 
   describe "#make_more" do
