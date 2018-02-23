@@ -10,7 +10,12 @@ def sluggish_octopus(fish_arr)
 end
 # O(n^2)
 
-def clever_octopus(fish_arr)
+def dominant_octopus(fish_arr)
 
 end
 # O(n log n)
+
+def clever_octopus(fish_arr)
+
+end
+# O(n)
