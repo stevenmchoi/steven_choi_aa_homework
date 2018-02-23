@@ -13,4 +13,10 @@ RSpec.describe "big_octopus.rb" do
       expect(sluggish_octopus(fish_arr)).to eq(fish_ans)
     end
   end
+
+  describe "#clever_octopus" do
+    it "finds the longest fish" do
+      expect(clever_octopus(fish_arr)).to eq(fish_ans)
+    end
+  end
 end
