@@ -41,6 +41,12 @@ end
 # O(n log n)
 
 def clever_octopus(fish_arr)
+  longest = ""
 
+  fish_arr.each do |fish|
+    longest = fish if longest.length < fish.length
+  end
+
+  longest
 end
 # O(n)
