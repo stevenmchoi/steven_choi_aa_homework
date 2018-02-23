@@ -13,22 +13,21 @@ end
 # O(n^2)
 
 def dominant_octopus(fish_arr)
+  dom_octo_sort(fish_arr).last
+end
+
+def dom_octo_sort(fish_arr)
   return fish_arr if fish_arr.length <= 1
 
   mid = fish_arr.length / 2
   left, right = fish_arr.take(mid), fish_arr.drop(mid)
 
-  dom_octo_merge(dominant_octopus(left), dominant_octopus(right)).last
+  dom_octo_merge(dom_octo_sort(left), dom_octo_sort(right))
 end
 
 def dom_octo_merge(left, right)
   return right if left.empty?
   return left if right.empty?
-
-  if left.is_a?(String)
-    left = [left]
-    right = [right]
-  end
 
   if left.first.length < right.first.length
     shorter = left.shift
