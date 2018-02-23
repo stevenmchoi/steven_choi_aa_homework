@@ -3,3 +3,7 @@ def sluggish_octopus(fish_arr)
     return fish if fish_arr.all? { |other_fish| fish.length > other_fish.length }
   end
 end
+
+def clever_octopush(fish_arr)
+  
+end
