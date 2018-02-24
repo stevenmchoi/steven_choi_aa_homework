@@ -1,13 +1,17 @@
 class LRUCache
-  def initialize
+  def initialize(num)
+    @max = num
+    @cache = Array.new(4)
   end
 
   def count
     # returns number of elements currently in cache
+    @cache.count
   end
 
   def add(el)
     # adds element to cache according to LRU principle
+    @cache[0] = el
   end
 
   def show
