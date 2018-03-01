@@ -23,14 +23,13 @@
 
 def find_angelina
   #find Angelina Jolie by name in the actors table
-  a_j = Actor.where('actors.name = ?', 'Angelina Jolie')
-  a_j.where_values_hash
+  Actor.where('actors.name = ?', 'Angelina Jolie').first
 end
 
 def top_titles
   # get movie titles from movies with scores greater than or equal to 9
   # hint: use 'select' and 'where'
-
+  
 end
 
 def star_wars
