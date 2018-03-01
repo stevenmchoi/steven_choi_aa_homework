@@ -23,7 +23,8 @@
 
 def find_angelina
   #find Angelina Jolie by name in the actors table
-
+  a_j = Actor.where('actors.name = ?', 'Angelina Jolie')
+  a_j.where_values_hash
 end
 
 def top_titles
