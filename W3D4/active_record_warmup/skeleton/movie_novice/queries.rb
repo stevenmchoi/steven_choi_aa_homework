@@ -35,7 +35,7 @@ end
 def star_wars
   #display the id, title and year of each Star Wars movie in movies.
   # hint: use 'select' and 'where'
-
+  Movie.where("title LIKE '%Star Wars%'").select(:id, :title, :yr)
 end
 
 
@@ -44,7 +44,7 @@ def below_average_years
   #with the count of movies scoring under 5 aliased as bad_movies,
   #in descending order
   # hint: use 'select', 'where', 'group', 'order'
-
+  Movie.where("score < 5").group(:yr).order("bad_movies DESC").select(:yr, "COUNT(*) as bad_movies")
 end
 
 def alphabetized_actors
