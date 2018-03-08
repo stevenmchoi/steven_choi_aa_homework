@@ -4,7 +4,7 @@
       <%= render "shared/errors" %>
 
     <form action="<%= session_url %>" method="post">
-      <%= cat.auth_token %>
+      <%= auth_token %>
 
       <label for="user_username">User Name</label>
       <input type="text" name="user[username]" id="user_username">
@@ -17,3 +17,8 @@
       <input type="submit">
     </form>
 </div></section>
+
+<% content_for :footer do %>
+  <p>Enter the lair, if you so dare</p>
+  <p>Or be so spared from much cat hair</p>
+<% end %>
