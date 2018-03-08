@@ -2,6 +2,8 @@ class CatRentalRequestsController < ApplicationController
   before_action :require_user!, only: %i(approve deny)
   before_action :require_cat_ownership!, only: %i(approve deny)
 
+  include ApplicationHelper
+
   def approve
     current_cat_rental_request.approve!
     redirect_to cat_url(current_cat)
