@@ -38,7 +38,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   # RSpec and Rails setup
-  gem 'factory_bot_rails'
+  gem 'factory_bot_rails', :require => false
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.0'
 end
